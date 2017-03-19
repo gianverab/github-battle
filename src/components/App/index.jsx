@@ -5,8 +5,8 @@ import style from './app.css'
 import Main from '../Main'
 
 class App extends Component {
-	constructor () {
-		super()
+	constructor (props) {
+		super(props)
 		this.state = {
 			user: {
 					name: 'Jane Doe',
