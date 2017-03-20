@@ -5,6 +5,7 @@ function Main (props) {
     <div>
       <h2>Hello, I'm {props.user.name}</h2>
       <h3>{props.user.email}</h3>
+      <button onClick={props.handleClick}>Update!</button>
     </div>
   )
 }

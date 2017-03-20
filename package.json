@@ -9,7 +9,7 @@
     "serve": "webpack-dev-server --content-base build/ --colors --progress",
     "start": "yarn run build && yarn run serve"
   },
-  "author": "Gian Vera",
+  "author": "Giancarlo Vera",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.18.0",
