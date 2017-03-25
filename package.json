@@ -9,8 +9,16 @@
     "serve": "webpack-dev-server --content-base build/ --colors --progress",
     "start": "yarn run build && yarn run serve"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gianverab/basic-react.git"
+  },
   "author": "Giancarlo Vera",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gianverab/basic-react/issues"
+  },
+  "homepage": "https://github.com/gianverab/basic-react#readme",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-loader": "^6.2.7",

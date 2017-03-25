@@ -1,0 +1,13 @@
+.root{
+  display: flex;
+  padding: 1em;
+  background-color: salmon;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  margin: 0;
+  color: #fff;
+  font-size: 1.8em;
+}

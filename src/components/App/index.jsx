@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import normalize from 'normalize-css'
-import style from './app.css'
 
+import Header from '../Header'
 import Main from '../Main'
 
 function handleClick (user, event) {
@@ -32,7 +32,8 @@ class App extends Component {
   }
   render () {
     return (
-      <div className={style.root}>
+      <div>
+        <Header />
         <Main user={this.state.user} handleClick={this.handleClick} />
       </div>
     )
