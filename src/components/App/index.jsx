@@ -1,26 +1,34 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Match } from 'react-router'
 import normalize from 'normalize-css'
 
 import Header from '../Header'
 import Main from '../Main'
+import Profile from '../Profile'
 
 function handleClick (user, event) {
   console.log('updated!')
   return this.setState({
     user: {
-      name: 'Gian Vera',
-      email: 'gianverab@gmail.com'
+      name: 'Giancarlo Vera',
+      email: 'gianverab@gmail.com',
+      picture: 'https://pbs.twimg.com/profile_images/1189582996/photo2-CV_400x400.jpg',
+      location: 'Buenos Aires',
+      url: 'classpoint.com'
     }
   })
 }
 
 class App extends Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     this.state = {
       user: {
-        name: 'Jane Doe',
-        email: 'janedoe@platzo.com'
+        name: 'Damian Madray',
+        email: 'themadray@labdesign.com',
+        picture: 'https://pbs.twimg.com/profile_images/711367050174697473/qnkLKfgM_400x400.jpg',
+        location: 'San Francisco',
+        url: 'theglint.com'
       }
     }
     this.handleClick = handleClick.bind(this, this.state.user)
@@ -32,10 +40,21 @@ class App extends Component {
   }
   render () {
     return (
-      <div>
-        <Header />
-        <Main user={this.state.user} handleClick={this.handleClick} />
-      </div>
+      <Router>
+        <div>
+          <Header />
+          <Match exactly pattern='/' render={() => {
+            return (
+              <Main user={this.state.user} handleClick={this.handleClick} />
+            )
+          }} />
+          <Match pattern='/profile' render={() => {
+            return (
+              <Profile user={this.state.user} />
+            )
+          }} />
+        </div>
+      </Router>
     )
   }
 }

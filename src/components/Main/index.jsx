@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Main (props) {
+function Main ({ user, handleClick }) {
   return (
     <div>
-      <h2>Hello, I'm {props.user.name}</h2>
-      <h3>{props.user.email}</h3>
-      <button onClick={props.handleClick}>Update!</button>
+      <h2>Hello, I'm {user.name}</h2>
+      <h3>{user.email}</h3>
+      <button onClick={handleClick}>Update!</button>
     </div>
   )
 }
