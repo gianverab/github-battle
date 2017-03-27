@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Match } from 'react-router'
+import { BrowserRouter as Router, Match, Miss } from 'react-router'
 import normalize from 'normalize-css'
 
 import Header from '../Header'
 import Main from '../Main'
 import Profile from '../Profile'
+import Error404 from '../Error404'
 
 function handleClick (user, event) {
   console.log('updated!')
@@ -53,6 +54,7 @@ class App extends Component {
               <Profile user={this.state.user} />
             )
           }} />
+          <Miss component={Error404} />
         </div>
       </Router>
     )
