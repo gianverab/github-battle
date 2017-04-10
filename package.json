@@ -1,7 +1,7 @@
 {
-  "name": "basic-react",
+  "name": "github-battle",
   "version": "1.0.0",
-  "description": "Basic structure of React app",
+  "description": "An app made with React for educational purposes.",
   "main": "/build/app.js",
   "scripts": {
     "production": "webpack -p",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/gianverab/basic-react.git"
+    "url": "git+ssh://git@github.com/gianverab/github-battle.git"
   },
-  "author": "Giancarlo Vera",
+  "author": "Giancarlo Vera <gianverab@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gianverab/basic-react/issues"
+    "url": "https://github.com/gianverab/github-battle/issues"
   },
-  "homepage": "https://github.com/gianverab/basic-react#readme",
+  "homepage": "https://github.com/gianverab/github-battle#readme",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-loader": "^6.2.7",

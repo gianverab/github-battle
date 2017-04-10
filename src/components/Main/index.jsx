@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 function Main () {
   return (
     <div>
-      <h2>Home</h2>
+      <h2>Github Battle</h2>
       <Link to='/profile'>View profile</Link>
     </div>
   )

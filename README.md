@@ -1,8 +1,8 @@
-# Basic React
+# Github Battle
 
 ## Description
 
-Basic structure of React app. 
+App made with React for educational purpose.
 
 ## Getting Started
 

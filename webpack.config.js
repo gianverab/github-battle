@@ -8,7 +8,10 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
 
-  entry: ['./src/index.jsx'],
+  entry: [
+    './src/index.jsx'
+  ],
+
   output: {
     filename: 'app.js',
     path: './build',
@@ -30,7 +33,13 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/assets/index.html' }),
-    new ExtractTextPlugin('style.css', { allChunks: true })
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+      inject: 'body'
+    }),
+    new ExtractTextPlugin('style.css', {
+      allChunks: true
+    })
   ]
 }
