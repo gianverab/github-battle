@@ -1,7 +1,7 @@
 .root{
   display: flex;
   padding: 1em;
-  background-color: salmon;
+  background-color: #24292e;
   align-items: center;
   justify-content: space-between;
 }
