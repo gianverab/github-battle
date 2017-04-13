@@ -10,6 +10,14 @@ import Error404 from '../Error404'
 class App extends Component {
   constructor () {
     super()
+
+    this.state = {
+      user: {
+        name: 'Giancarlo Vera',
+        username: 'gianverab',
+        img: 'https://pbs.twimg.com/profile_images/1189582996/photo2-CV_400x400.jpg'
+      }
+    }
   }
 
   render () {
@@ -24,7 +32,7 @@ class App extends Component {
           }} />
           <Match pattern='/profile' render={() => {
             return (
-              <Profile />
+              <Profile user={this.state.user} />
             )
           }} />
           <Miss component={Error404} />

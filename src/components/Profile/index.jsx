@@ -1,13 +1,22 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router'
 
-function Profile () {
+const propTypes = {
+  user: PropTypes.object.isRequired
+}
+
+function Profile ({ user }) {
   return (
     <div>
-      <h2>Github Profile</h2>
+      <img src={user.img} alt={`${user.name} photo`} />
+      <h2>{`Name: ${user.name}`}</h2>
+      <p>{`username: ${user.username}`}</p>
       <Link to='/'>Go home!</Link>
     </div>
   )
 }
+
+Profile.propTypes = propTypes
 
 export default Profile
