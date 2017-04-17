@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Match, Miss } from 'react-router'
+
+import style from './app.css'
 import normalize from 'normalize-css'
 
 import Header from '../Header'
 import Main from '../Main'
+import Popular from '../Popular'
 import Profile from '../Profile'
 import Error404 from '../Error404'
 
@@ -25,17 +28,24 @@ class App extends Component {
       <Router>
         <div>
           <Header />
-          <Match exactly pattern='/' render={() => {
-            return (
-              <Main />
-            )
-          }} />
-          <Match pattern='/profile' render={() => {
-            return (
-              <Profile user={this.state.user} />
-            )
-          }} />
-          <Miss component={Error404} />
+          <div className={style.container}>
+            <Match exactly pattern='/' render={() => {
+              return (
+                <Main />
+              )
+            }} />
+            <Match pattern='/popular' render={() => {
+              return (
+                <Popular />
+              )
+            }} />
+            <Match pattern='/profile' render={() => {
+              return (
+                <Profile user={this.state.user} />
+              )
+            }} />
+            <Miss component={Error404} />
+          </div>
         </div>
       </Router>
     )

@@ -3,7 +3,11 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router'
 
 const propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired
+  })
 }
 
 function Profile ({ user }) {
