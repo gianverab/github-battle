@@ -2,9 +2,22 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import style from './popular.css'
 
-const propTypes = {
+function LanguageItem (props) {
+  return (
+    <li
+      onClick={props.onSelect}
+      style={props.activeLanguage === props.lang ? {color: '#d0021b'} : null}
+      className={style.languageItem}
+      >
+      {props.lang}
+    </li>
+  )
+}
+
+LanguageItem.propTypes = {
+  onSelect: PropTypes.func.isRequired,
   activeLanguage: PropTypes.string.isRequired,
-  onSelect: PropTypes.func.isRequired
+  lang: PropTypes.string.isRequired
 }
 
 function SelectLanguage (props) {
@@ -13,20 +26,22 @@ function SelectLanguage (props) {
     <ul className={style.languages}>
       {languages.map(lang => {
         return (
-          <li
-            style={props.activeLanguage === lang ? {color: '#d0021b'} : null}
-            className={style.language}
+          <LanguageItem
+            activeLanguage={props.activeLanguage}
+            lang={lang}
             key={lang}
-            onClick={props.onSelect.bind(null, lang)}>
-            {lang}
-          </li>
+            onSelect={props.onSelect.bind(null, lang)}
+          />
         )
       })}
     </ul>
   )
 }
 
-SelectLanguage.propTypes = propTypes
+SelectLanguage.propTypes = {
+  activeLanguage: PropTypes.string.isRequired,
+  onSelect: PropTypes.func.isRequired
+}
 
 class Popular extends Component {
   constructor (props) {
