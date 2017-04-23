@@ -47,14 +47,15 @@ SelectLanguage.propTypes = {
 
 function ReposGrid (props) {
   return (
-    <ul>
+    <ul className={style.repoGrid}>
       {props.repos.map((repo, index) => {
         return (
-          <li key={repo.name}>
-            <div>#{index + 1}</div>
-            <ul>
+          <li className={style.repo} key={repo.name}>
+            <div className={style.rank}>#{index + 1}</div>
+            <ul className={style.repoItems}>
               <li>
                 <img
+                  className={style.avatar}
                   src={repo.owner.avatar_url}
                   alt={`Avatar for ${repo.owner.login}`}
                 />
@@ -97,9 +98,8 @@ class Popular extends Component {
     api.fetchPopularRepos(lang)
       .then(function (repos) {
         this.setState({
-          repos: repos
+          repos
         })
-        console.log(repos)
       }.bind(this))
   }
 

@@ -11,3 +11,43 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.repoGrid {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  padding: 0;
+  justify-content: space-around;
+}
+
+.repo {
+  margin: 0 20px 20px;
+  text-align: center;
+}
+
+.rank {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.repoItems {
+  list-style: none;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.repoItems > li {
+  padding: 1px 0;
+}
+
+.repoItems a:link,
+.repoItems a:visited {
+  color: #d0021b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.avatar {
+  width: 150px;
+  border-radius: 50%;
+}
