@@ -10,12 +10,12 @@ const propTypes = {
   })
 }
 
-function Profile ({ user }) {
+function Profile (props) {
   return (
     <div>
-      <img src={user.img} alt={`${user.name} photo`} />
-      <h2>{`Name: ${user.name}`}</h2>
-      <p>{`username: ${user.username}`}</p>
+      <img src={props.user.img} alt={`${props.user.name} photo`} />
+      <h2>{`Name: ${props.user.name}`}</h2>
+      <p>{`username: ${props.user.username}`}</p>
       <Link to='/'>Go home!</Link>
     </div>
   )
