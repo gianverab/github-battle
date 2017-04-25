@@ -5,9 +5,9 @@ import style from './app.css'
 import normalize from 'normalize-css'
 
 import Header from '../Header'
-import Main from '../Main'
+import Home from '../Home'
 import Popular from '../Popular'
-import Profile from '../Profile'
+import Battle from '../Battle'
 import Error404 from '../Error404'
 
 class App extends Component {
@@ -29,21 +29,10 @@ class App extends Component {
         <div>
           <Header />
           <div className={style.container}>
-            <Match exactly pattern='/' render={() => {
-              return (
-                <Main />
-              )
-            }} />
-            <Match pattern='/popular' render={() => {
-              return (
-                <Popular />
-              )
-            }} />
-            <Match pattern='/profile' render={() => {
-              return (
-                <Profile user={this.state.user} />
-              )
-            }} />
+            <Match exactly pattern='/' component={Home} />
+            <Match pattern='/popular' component={Popular} />
+
+            <Match exactly pattern='/battle' component={Battle} />
             <Miss component={Error404} />
           </div>
         </div>

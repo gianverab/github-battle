@@ -1,6 +1,6 @@
 .root{
   display: flex;
-  padding: 1em;
+  padding: 0.5em 2em;
   background-color: #24292e;
   align-items: center;
   justify-content: space-between;
@@ -10,4 +10,23 @@
   margin: 0;
   color: #fff;
   font-size: 1.8em;
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu > li {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.menu a:link,
+.menu a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
 }
