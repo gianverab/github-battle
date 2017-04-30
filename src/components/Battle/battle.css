@@ -1,13 +1,13 @@
 .row {
   display: flex;
   justify-content: space-around;
-  padding: 50px 100px;
+  padding: 50px;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  width: 360px;
+  width: 320px;
   align-items: center;
 }
 
@@ -33,6 +33,20 @@
   border-radius: 3px;
   border: none;
   outline: none;
+}
+
+.buttonCenter {
+  background-color: #24292e;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 50px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  display: block;
+  text-align: center;
+  width: 50px;
+  margin: 0 auto;
 }
 
 .reset {

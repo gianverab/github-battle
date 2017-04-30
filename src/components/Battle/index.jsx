@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 import PropTypes from 'prop-types'
 
 import style from './battle.css'
@@ -129,44 +130,58 @@ class Battle extends Component {
   }
 
   render () {
+    var location = this.props.location
     var playerOneName = this.state.playerOneName
     var playerTwoName = this.state.playerTwoName
     var playerOneImage = this.state.playerOneImage
     var playerTwoImage = this.state.playerTwoImage
 
     return (
-      <div className={style.row}>
-        {!playerOneName &&
-          <PlayerInput
-            id='playerOne'
-            label='Player One'
-            onSubmit={this.handleSubmit}
-          />
+      <div>
+        <div className={style.row}>
+          {!playerOneName &&
+            <PlayerInput
+              id='playerOne'
+              label='Player One'
+              onSubmit={this.handleSubmit}
+            />
+          }
+          {playerOneImage !== null &&
+            <PlayerPreview
+              id='playerOne'
+              avatar={playerOneImage}
+              username={playerOneName}
+              onReset={this.handleReset}
+            />
+          }
+          {!playerTwoName &&
+            <PlayerInput
+              id='playerTwo'
+              label='Player Two'
+              onSubmit={this.handleSubmit}
+            />
+          }
+          {playerTwoImage !== null &&
+            <PlayerPreview
+              id='playerTwo'
+              avatar={playerTwoImage}
+              username={playerTwoName}
+              onReset={this.handleReset}
+            />
+          }
+        </div>
+        {playerOneImage && playerTwoImage &&
+          <Link
+            className={style.buttonCenter}
+            to={{
+              pathname: location.pathname + '/results',
+              search: `?playerOneName=` + playerOneName + '&playerTwoName=' +
+                playerTwoName
+            }}
+            >
+            Battle
+          </Link>
         }
-        {playerOneImage !== null &&
-          <PlayerPreview
-            id='playerOne'
-            avatar={playerOneImage}
-            username={playerOneName}
-            onReset={this.handleReset}
-          />
-        }
-        {!playerTwoName &&
-          <PlayerInput
-            id='playerTwo'
-            label='Player Two'
-            onSubmit={this.handleSubmit}
-          />
-        }
-        {playerTwoImage !== null &&
-          <PlayerPreview
-            id='playerTwo'
-            avatar={playerTwoImage}
-            username={playerTwoName}
-            onReset={this.handleReset}
-          />
-        }
-
       </div>
     )
   }

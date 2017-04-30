@@ -8,6 +8,7 @@ import Header from '../Header'
 import Home from '../Home'
 import Popular from '../Popular'
 import Battle from '../Battle'
+import Results from '../Results'
 import Error404 from '../Error404'
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
             <Match exactly pattern='/' component={Home} />
             <Match pattern='/popular' component={Popular} />
             <Match exactly pattern='/battle' component={Battle} />
+            <Match pattern='/battle/results' component={Results} />
             <Miss component={Error404} />
           </div>
         </div>
