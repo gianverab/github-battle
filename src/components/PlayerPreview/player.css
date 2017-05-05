@@ -1,0 +1,16 @@
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  align-items: center;
+}
+
+.label {
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.avatar {
+  max-width: 50%;
+  border-radius: 50%;
+}

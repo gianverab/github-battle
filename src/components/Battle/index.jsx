@@ -2,36 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import PropTypes from 'prop-types'
 
+import PlayerPreview from '../PlayerPreview'
 import style from './battle.css'
-
-function PlayerPreview (props) {
-  return (
-    <div>
-      <div className={style.column}>
-        <img
-          src={props.avatar}
-          alt={`Avatar for ${props.username}`}
-          className={style.avatar}
-        />
-        <h2 className={style.username}>@{props.username}</h2>
-      </div>
-      <button
-        className={style.reset}
-        onClick={props.onReset.bind(null, props.id)}
-      >
-        Reset
-      </button>
-
-    </div>
-  )
-}
-
-PlayerPreview.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  onReset: PropTypes.func.isRequired
-}
 
 class PlayerInput extends Component {
   constructor (props) {
@@ -148,11 +120,16 @@ class Battle extends Component {
           }
           {playerOneImage !== null &&
             <PlayerPreview
-              id='playerOne'
               avatar={playerOneImage}
               username={playerOneName}
-              onReset={this.handleReset}
-            />
+            >
+              <button
+                className={style.reset}
+                onClick={this.handleReset.bind(null, 'playerOne')}
+              >
+                Reset
+              </button>
+            </PlayerPreview>
           }
           {!playerTwoName &&
             <PlayerInput
@@ -163,11 +140,16 @@ class Battle extends Component {
           }
           {playerTwoImage !== null &&
             <PlayerPreview
-              id='playerTwo'
               avatar={playerTwoImage}
               username={playerTwoName}
-              onReset={this.handleReset}
-            />
+            >
+              <button
+                className={style.reset}
+                onClick={this.handleReset.bind(null, 'playerTwo')}
+              >
+                Reset
+              </button>
+            </PlayerPreview>
           }
         </div>
         {playerOneImage && playerTwoImage &&
