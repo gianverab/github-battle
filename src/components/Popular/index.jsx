@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import api from '../../utils/api'
+import Loading from '../Loading'
 import style from './popular.css'
 
 function LanguageItem (props) {
@@ -111,7 +112,7 @@ class Popular extends Component {
           onSelect={this.handleLanguage}
         />
         {!this.state.repos
-          ? <p>LOADING..</p>
+          ? <Loading />
           : <ReposGrid repos={this.state.repos} />
         }
       </div>
